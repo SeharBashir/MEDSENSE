@@ -1,0 +1,30 @@
+# Dataset configuration for MedSense pipeline
+# Point this file at a different dataset by changing the mappings below.
+# Nothing in src/ should ever hardcode a column name directly - it should
+# always read the name from this file.
+
+dataset_name: "webmd_drug_reviews"
+raw_path: "data/raw/webmd.csv"
+processed_path: "data/processed/deidentified.csv"
+
+columns:
+  text: "Reviews"          # the free-text patient review column
+  category: "Condition"    # the condition/category column
+  rating: "Satisfaction"   # overall rating column
+  date: "Date"             # date column (optional - set to null if none)
+  drug: "Drug"             # optional, used for grouping
+  drug_id: "DrugId"       # optional, used to dedupe scraping-duplicate rows (see dedup step)
+  age: "Age"               # optional, used for quasi-id risk flagging
+  sex: "Sex"                # optional, used for quasi-id risk flagging
+
+# Privacy settings (Phase 2)
+privacy:
+  min_cell_count: 5        # subgroup stats below this count get suppressed later
+  quasi_id_fields:          # fields that, combined, could re-identify someone
+    - "category"
+    - "age"
+    - "sex"
+  quasi_id_rare_category_threshold: 10  # a category rarer than this + demographic fields = high risk
+
+# Minimum review length (characters) to keep - filters blank/junk rows
+min_review_length: 15

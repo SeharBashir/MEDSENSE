@@ -1,0 +1,17 @@
+﻿# Data - never commit patient data, even de-identified
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Python
+venv/
+__pycache__/
+*.pyc
+.Python
+*.egg-info/
+
+# OS/editor junk
+.DS_Store
+.vscode/
+*.swp
