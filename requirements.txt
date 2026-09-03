@@ -2,3 +2,8 @@ pandas
 pyyaml
 spacy
 tqdm
+sentence-transformers
+hdbscan
+umap-learn
+scikit-learn
+vaderSentiment
