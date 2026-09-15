@@ -1,0 +1,219 @@
+{
+  "statin_muscle_pain": {
+    "description": "Statin-class drugs (High Cholesterol) - muscle pain/weakness dominates complaints, not efficacy",
+    "topic_ids": [
+      4,
+      68,
+      69,
+      93,
+      94,
+      539,
+      540
+    ],
+    "n_total_reviews": 1780,
+    "avg_sentiment": -0.488,
+    "top_conditions": {
+      "High Cholesterol": 869,
+      "Combined High Blood Cholesterol and Triglyceride Level": 287,
+      "Other": 97
+    },
+    "top_drugs": {
+      "lipitor": 359,
+      "crestor": 327,
+      "simvastatin": 241,
+      "zocor": 226,
+      "livalo": 63
+    },
+    "n_small_cell_excluded_from_examples": 2,
+    "n_quasi_identifying_excluded_from_examples": 2,
+    "topics_flagged_small_by_phase4": [],
+    "privacy_check_passed": true,
+    "safe_example_quotes": [
+      "Changed from Lipitor to Pravachol although good results with Lipitor. I had some muscle soreness. My cholestrol dropped from 249 to 146 and triglycerides dropped well within limits.",
+      "I experiences SEVERE muscle and bone pain.  It was so severe that I had multiple scans of my bones for breakage.  I will never forget the severity of this pain 100 x's worst then childbirth.",
+      "I am fearful of taking Lipitor because, from the leaflet precautions, I am well over 70\nI have breathing problems\nI have had quite a few strokes\nI am on calcium channel blockers\nI have had a serious liver complaint\nI have renal impairment\nI have even been given erythromycin and clarithomycin with absolutely disastrous and frightening results\nMy doctor just looked in the drugs book and prescribed them. He hardly knows me.\nWhat does anyone suggest?\nI also heard that they can contribute to seizures which I had 2 minimal ones with strokes.\nAny medic advice please?\nI am also on quinine for cramp 300mg but it doesn't stop it."
+    ]
+  },
+  "adhd_caregiver_reporting": {
+    "description": "ADHD medication reviews are disproportionately caregiver-reported (parent writing about a child), not self-reported",
+    "topic_ids": [
+      503,
+      485,
+      502
+    ],
+    "n_total_reviews": 2011,
+    "avg_sentiment": -0.215,
+    "top_conditions": {
+      "Attention Deficit Disorder with Hyperactivity": 1306,
+      "Other": 277,
+      "Asthma Prevention": 19
+    },
+    "top_drugs": {
+      "vyvanse": 329,
+      "concerta": 172,
+      "focalin xr": 125,
+      "intuniv": 125,
+      "focalin": 95
+    },
+    "n_small_cell_excluded_from_examples": 7,
+    "n_quasi_identifying_excluded_from_examples": 14,
+    "topics_flagged_small_by_phase4": [],
+    "privacy_check_passed": true,
+    "safe_example_quotes": [
+      "My son was taking concerta 36mg and it worked for him for about 6 months.  Then he started to loose focus and having problems in school again. So he was changed to 54mg. After 3 weeks, his hair started falling out in 2 spots and he started hallucinating and crying about it.  The doctor wanted to take him off meds for a month but his behavior at school was very disruptive. He was unfocused and not doing any classwork. His teacher preferred that he stayed at home unless he could back on the meds. At home, he was worst with his siblings and myself. We had to put him back on meds after being off for 2 weeks.  He is now on adderall xr 10mg and as of yet, we don't know how effective or noneffective it is.  ",
+      "my son is the patient, it worked great before but he is having difficulties adjusting to the side effects this time.",
+      "Her personality has changed and she is quite abusive to the people around her. She has turned on everyone even her son."
+    ]
+  },
+  "cost_sentiment_masking": {
+    "description": "Cost/insurance complaints show falsely neutral aggregate sentiment because Satisfaction measures drug efficacy, not affordability",
+    "topic_ids": [
+      874,
+      877,
+      852
+    ],
+    "n_total_reviews": 562,
+    "avg_sentiment": -0.111,
+    "top_conditions": {
+      "Other": 60,
+      "High Blood Pressure": 32,
+      "Type 2 Diabetes Mellitus": 26
+    },
+    "top_drugs": {
+      "plavix": 15,
+      "cymbalta": 9,
+      "provigil": 8,
+      "denavir cream": 6,
+      "lyrica": 5
+    },
+    "n_small_cell_excluded_from_examples": 8,
+    "n_quasi_identifying_excluded_from_examples": 13,
+    "topics_flagged_small_by_phase4": [],
+    "privacy_check_passed": true,
+    "safe_example_quotes": [
+      "medicine to expensive ",
+      "The price of this product is stupidly expensive. GSK is ripping off patients;-( Looking for a compouding pharmacy to make something similar.",
+      "This drug has helped me immensely.  However, the cost has increased by more than 500%!!! In 2008 the retail cost was $91.43 for 140 ml...in 2009 the retain went up to $552.57 for 140 ml.  This is unconscionable.  Cannot something be done to reduce the cost of this effective medication?"
+    ]
+  },
+  "bisphosphonate_bone_pain": {
+    "description": "Osteoporosis bisphosphonates (Boniva, Fosamax, Actonel) - severe bone/joint pain, an ironic class-wide effect",
+    "topic_ids": [
+      175,
+      177,
+      178
+    ],
+    "n_total_reviews": 360,
+    "avg_sentiment": -0.66,
+    "top_conditions": {
+      "Decreased Bone Mass Following Menopause": 201,
+      "Post-Menopausal Osteoporosis Prevention": 52,
+      "Osteoporosis": 49
+    },
+    "top_drugs": {
+      "boniva": 118,
+      "fosamax": 100,
+      "actonel tablet osteoporosis agents": 61,
+      "boniva syringe": 17,
+      "alendronate sodium tablet osteoporosis agents": 16
+    },
+    "n_small_cell_excluded_from_examples": 0,
+    "n_quasi_identifying_excluded_from_examples": 0,
+    "topics_flagged_small_by_phase4": [],
+    "privacy_check_passed": true,
+    "safe_example_quotes": [
+      "i have been on boniva for over 2 yrs now. i had problems with actonel.  i had osteopenia because i take prilosec for reflux which inhibits the absorption of calcium.  i have noticed the last 3 months or more increased are pain, back pain and i can hardly walk on my feet with out some kind of support.  the pain wakes me up at night even with pain meds.  i have started having stomach problems and it wasn't until i read the post about constipation that i connected the fact i have had 2 bowel impactions in the past year and a half.  i am going to talk to my doctor about going off.  my bone scan did show my bones are good now so at least it worked for that. per my dr's advice i take a stomach supplement to help me absorb calcium. i just passed my first anniversary for menopause.",
+      "After one year on Actonel, I began taking this pill for over another three years without any side effects.  Last July, I began experiencing excruciating pain in my back, hips, knees.  In August I ended up at the periodontist due to extreme pain associated with bone exposure at my gums (bleeding and trobbing).  I now need a gum graph.  I was told to stop this med.  It has been 6 months since my last pill and I still hurt - back, hips, legs, knees, but it is getting better.  I've always been in good shape and physically active, but this pill has given me a lot of pain, expense and agony.  I won't take it again.   ",
+      "I took Actonel first thing Sat morning. After 1 hour, I had stomach cramps & lower back pain.  By nightime, I was nauseated, upper and lower back hurt, and cramps.  Sunday was much worse.  All the above plus my chest hurt so bad I couldn't lift my arms.  The pain went through to my back.  I had to take pain medication.  Monday morning the chest pain and back pains are better but still have stomach cramps.  I hope I live another day.  I would never recommend this medicine.  "
+    ]
+  },
+  "depression_sexual_side_effects": {
+    "description": "Depression medications - sexual side effects form a distinct complaint cluster separate from general inefficacy",
+    "topic_ids": [
+      185,
+      187
+    ],
+    "n_total_reviews": 420,
+    "avg_sentiment": -0.183,
+    "top_conditions": {
+      "Depression": 122,
+      "Other": 41,
+      "High Blood Pressure": 35
+    },
+    "top_drugs": {
+      "lexapro": 32,
+      "zoloft": 30,
+      "citalopram hbr": 27,
+      "celexa": 27,
+      "effexor xr": 18
+    },
+    "n_small_cell_excluded_from_examples": 1,
+    "n_quasi_identifying_excluded_from_examples": 1,
+    "topics_flagged_small_by_phase4": [],
+    "privacy_check_passed": true,
+    "safe_example_quotes": [
+      "Works for Social Anxiety, but does not help with Depression, has significant sexual side-effects.",
+      "the 100mg from depression point of view is working well. It caused sever loss of ejaculation and penis less sensitivity. Erection is still good",
+      "Kills sexual functioning.  Don't take it.  Took it with an open mind.  Doctors don't inform you of the possible consequences and the FDA has underestimated the sexual dysfunction effects which are significant (read online)! Look up PSSD on line.  Can have long term effects you won't want.  Regret taking it."
+    ]
+  },
+  "sleep_med_hallucinations": {
+    "description": "Sleep medications - hallucinations/confusion is a distinct, separable symptom from ordinary grogginess",
+    "topic_ids": [
+      864,
+      865
+    ],
+    "n_total_reviews": 127,
+    "avg_sentiment": -0.735,
+    "top_conditions": {
+      "Other": 18,
+      "Chronic Trouble Sleeping": 13,
+      "Pain": 7
+    },
+    "top_drugs": {
+      "ambien": 8,
+      "seroquel": 6,
+      "nucynta": 4,
+      "levaquin": 3,
+      "prednisone concentrate": 3
+    },
+    "n_small_cell_excluded_from_examples": 0,
+    "n_quasi_identifying_excluded_from_examples": 1,
+    "topics_flagged_small_by_phase4": [],
+    "privacy_check_passed": true,
+    "safe_example_quotes": [
+      " HAVE  HAD  BAD  SIDE  EFFECTS  FROM THIS  DRUG  AFTER ONLY  TAKING  2 PILLS    DIZZINESS  WEAK  HALLUCINATION .......",
+      "my hallucinations dissapeared within 3 weeks! I can think clearly enough to go back to work full time.\n",
+      "I could only take this drug for about 3 days. Starting on day one, I starting having hallucinations at night and they got worse the next couple nights. I stopped taking it after that. The one thing I had was my sleep and that was important to me. this drug interupted that. Maybe if i could have stuck it out, they would have stopped but I couldn't take it anymore. I was seeing things melt down my wall and seeing people in my room. My husband literally had to lay on top of me and hold me to get me to sleep."
+    ]
+  },
+  "serious_adverse_events": {
+    "description": "Severe adverse event narrative cluster (death, hospitalization) - sensitive, aggregate-only",
+    "topic_ids": [
+      636
+    ],
+    "n_total_reviews": 112,
+    "avg_sentiment": -0.882,
+    "top_conditions": {
+      "Other": 33,
+      "Pain": 6,
+      "Atrial Fibrillation": 4
+    },
+    "top_drugs": {
+      "amiodarone hcl": 6,
+      "oxycontin": 3,
+      "remodulin vial": 3,
+      "seroquel": 3,
+      "oxycodone hcl solution": 2
+    },
+    "n_small_cell_excluded_from_examples": 4,
+    "n_quasi_identifying_excluded_from_examples": 7,
+    "topics_flagged_small_by_phase4": [],
+    "privacy_check_passed": true,
+    "safe_example_quotes": [
+      "My mother's doctor did not provide the needed warning about this medication in relation to my other conditions and she ended up with many other problems as a result. ",
+      "This drug caused hyperbilirubemia, hepatotoxicity and extreme high blood pressure leading to the death of my spouse. ",
+      "My uncle started this \"experientimental\" drug for this disease and 4 days later ended  up in the hospital, specilast would not see him for 3 more months.  The drug shut all his organs down and we lost him 2 days later."
+    ]
+  }
+}

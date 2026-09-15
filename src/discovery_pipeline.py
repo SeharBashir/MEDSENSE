@@ -183,6 +183,32 @@ def flag_spam_reviews(texts: pd.Series) -> pd.Series:
     return texts.str.contains(pattern, regex=True, na=False, case=False)
 
 
+def flag_templated_duplicate_reviews(df: pd.DataFrame, text_col: str, drug_id_col: str | None,
+                                      min_distinct_drugs: int = 5) -> pd.Series:
+    """
+    Flags reviews whose exact text appears under an implausibly large
+    number of DISTINCT, unrelated drugs - e.g. the same joke sentence
+    ("this treatment is awsome. I love drugs.") showing up verbatim
+    under Cardura, Celebrex, Chloroquine, and cough drops. No real
+    patient plausibly wrote the identical sentence about a dozen+
+    unrelated drug classes.
+
+    This is different from Phase 2's scraping-duplicate dedup, which
+    only collapses the SAME drug's formulation-label variants (same
+    DrugId). This catches templated/troll content that spans genuinely
+    different drugs and therefore survived that earlier dedup - found
+    during Phase 4 QA when it corrupted 4 separate topics with
+    duplicated junk content and confused the sentiment-validity check
+    (VADER read "I love drugs" as positive; the low patient rating
+    correctly read it as the joke/low-satisfaction review it is - but
+    neither should have been treated as 4 real, distinct topics).
+    """
+    if not drug_id_col or drug_id_col not in df.columns:
+        return pd.Series(False, index=df.index)
+    distinct_drug_counts = df.groupby(text_col)[drug_id_col].transform("nunique")
+    return distinct_drug_counts >= min_distinct_drugs
+
+
 def flag_small_topics(labels, min_topic_size: int = 30) -> dict[int, bool]:
     """
     Mirrors Phase 2's small-cell logic, but at the topic level instead
@@ -243,6 +269,18 @@ def run(config_path: str, sample_size: int | None, min_cluster_size: int, force_
     if n_spam:
         print(f"  Removing {n_spam:,} rows that look like spam/promotional content, not genuine reviews.")
         df = df[~is_spam].reset_index(drop=True)
+
+    # --- Templated/troll duplicate filtering (found during Phase 4 QA) ------
+    # Same exact text posted under an implausible number of unrelated drugs
+    # (e.g. "this treatment is awsome. I love drugs." under Cardura, Celebrex,
+    # Chloroquine, cough drops...) - not real patient feedback for any of them.
+    print("Checking for templated/joke text posted across many unrelated drugs ...")
+    drug_id_col = cols.get("drug_id")
+    is_templated = flag_templated_duplicate_reviews(df, text_col, drug_id_col)
+    n_templated = int(is_templated.sum())
+    if n_templated:
+        print(f"  Removing {n_templated:,} rows of templated text spanning too many distinct drugs to be genuine.")
+        df = df[~is_templated].reset_index(drop=True)
 
     texts = df[text_col].astype(str).tolist()
 
