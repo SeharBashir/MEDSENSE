@@ -21,6 +21,26 @@ PRIVACY RULES APPLIED (from Phase 2 and Phase 4):
 - A row flagged is_small_cell (Phase 2, <5 reviews for its condition)
   is excluded entirely from insight evidence.
 
+SENSITIVE-CONTENT RULE (added after review - see below):
+is_small_cell/is_quasi_identifying are cell-size and combination-risk
+flags. They were never designed to catch "this content is sensitive
+regardless of how many rows share it" - a cluster of 112 reviews
+describing deaths and hospitalizations passes those checks easily (the
+cell isn't small, the rows aren't quasi-identifying), but the CONTENT
+itself is exactly the kind of thing that should never appear as a
+verbatim quote in a write-up or, worse, in a public API response.
+
+Any insight listed in SENSITIVE_INSIGHTS has its quote sampling skipped
+ENTIRELY - not filtered by the existing flags, skipped outright. This
+was found necessary after a real miss: an earlier version of this script
+ran the same generic sampling on the serious-adverse-events insight as
+every other one, and insights_verified.json ended up containing three
+verbatim quotes - including one describing a spouse's death - despite
+the accompanying write-up explicitly promising "aggregate-only, no
+verbatim quotes" for that insight. The flags didn't fail; they were
+never the right tool for this problem, which is a content-sensitivity
+judgment, not a cell-size or combination-risk one.
+
 Usage:
     python src/build_insights.py
 """
@@ -66,6 +86,14 @@ CANDIDATE_INSIGHTS = {
     },
 }
 
+# Insights whose content is sensitive regardless of cell size or
+# quasi-identification status - quote sampling is skipped entirely for
+# these, not filtered. Add an insight name here any time the topic
+# content involves death, serious harm, or similarly sensitive personal
+# narrative - this is a human judgment call made when defining the
+# candidate insight, not something the script can infer automatically.
+SENSITIVE_INSIGHTS = {"serious_adverse_events"}
+
 
 def run():
     df = pd.read_csv("data/processed/topics.csv")
@@ -91,9 +119,15 @@ def run():
         n_small_cell = int(subset["is_small_cell"].sum())
         n_quasi_id = int(subset["is_quasi_identifying"].sum())
 
-        # Safe examples: not small-cell, not quasi-identifying
-        safe_pool = subset[(subset["is_small_cell"] == False) & (subset["is_quasi_identifying"] == False)]
-        examples = safe_pool["Reviews"].astype(str).sample(min(3, len(safe_pool)), random_state=1).tolist() if len(safe_pool) else []
+        is_sensitive = name in SENSITIVE_INSIGHTS
+
+        if is_sensitive:
+            # Quote sampling skipped entirely - not filtered by the
+            # existing flags, never sampled in the first place.
+            examples = []
+        else:
+            safe_pool = subset[(subset["is_small_cell"] == False) & (subset["is_quasi_identifying"] == False)]
+            examples = safe_pool["Reviews"].astype(str).sample(min(3, len(safe_pool)), random_state=1).tolist() if len(safe_pool) else []
 
         avg_sentiment = float(subset["sentiment"].mean()) if n_total else None
         top_conditions = subset["Condition"].value_counts().head(3).to_dict()
@@ -112,13 +146,15 @@ def run():
             "n_quasi_identifying_excluded_from_examples": n_quasi_id,
             "topics_flagged_small_by_phase4": any_small_topic,
             "privacy_check_passed": privacy_ok,
+            "is_sensitive_no_quotes": is_sensitive,
             "safe_example_quotes": examples,
         }
 
         status = "OK" if privacy_ok else "NEEDS REVIEW"
         sentiment_str = f"{avg_sentiment:.3f}" if avg_sentiment is not None else "n/a"
+        sensitive_str = " [SENSITIVE - quotes skipped]" if is_sensitive else ""
         print(f"[{status}] {name}: n={n_total}, avg_sentiment={sentiment_str}, "
-              f"small_topics_included={any_small_topic}")
+              f"small_topics_included={any_small_topic}{sensitive_str}")
 
     out_path = Path("data/processed/insights_verified.json")
     with open(out_path, "w") as f:

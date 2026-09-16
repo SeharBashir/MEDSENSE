@@ -28,6 +28,7 @@
     "n_quasi_identifying_excluded_from_examples": 2,
     "topics_flagged_small_by_phase4": [],
     "privacy_check_passed": true,
+    "is_sensitive_no_quotes": false,
     "safe_example_quotes": [
       "Changed from Lipitor to Pravachol although good results with Lipitor. I had some muscle soreness. My cholestrol dropped from 249 to 146 and triglycerides dropped well within limits.",
       "I experiences SEVERE muscle and bone pain.  It was so severe that I had multiple scans of my bones for breakage.  I will never forget the severity of this pain 100 x's worst then childbirth.",
@@ -59,6 +60,7 @@
     "n_quasi_identifying_excluded_from_examples": 14,
     "topics_flagged_small_by_phase4": [],
     "privacy_check_passed": true,
+    "is_sensitive_no_quotes": false,
     "safe_example_quotes": [
       "My son was taking concerta 36mg and it worked for him for about 6 months.  Then he started to loose focus and having problems in school again. So he was changed to 54mg. After 3 weeks, his hair started falling out in 2 spots and he started hallucinating and crying about it.  The doctor wanted to take him off meds for a month but his behavior at school was very disruptive. He was unfocused and not doing any classwork. His teacher preferred that he stayed at home unless he could back on the meds. At home, he was worst with his siblings and myself. We had to put him back on meds after being off for 2 weeks.  He is now on adderall xr 10mg and as of yet, we don't know how effective or noneffective it is.  ",
       "my son is the patient, it worked great before but he is having difficulties adjusting to the side effects this time.",
@@ -90,6 +92,7 @@
     "n_quasi_identifying_excluded_from_examples": 13,
     "topics_flagged_small_by_phase4": [],
     "privacy_check_passed": true,
+    "is_sensitive_no_quotes": false,
     "safe_example_quotes": [
       "medicine to expensive ",
       "The price of this product is stupidly expensive. GSK is ripping off patients;-( Looking for a compouding pharmacy to make something similar.",
@@ -121,6 +124,7 @@
     "n_quasi_identifying_excluded_from_examples": 0,
     "topics_flagged_small_by_phase4": [],
     "privacy_check_passed": true,
+    "is_sensitive_no_quotes": false,
     "safe_example_quotes": [
       "i have been on boniva for over 2 yrs now. i had problems with actonel.  i had osteopenia because i take prilosec for reflux which inhibits the absorption of calcium.  i have noticed the last 3 months or more increased are pain, back pain and i can hardly walk on my feet with out some kind of support.  the pain wakes me up at night even with pain meds.  i have started having stomach problems and it wasn't until i read the post about constipation that i connected the fact i have had 2 bowel impactions in the past year and a half.  i am going to talk to my doctor about going off.  my bone scan did show my bones are good now so at least it worked for that. per my dr's advice i take a stomach supplement to help me absorb calcium. i just passed my first anniversary for menopause.",
       "After one year on Actonel, I began taking this pill for over another three years without any side effects.  Last July, I began experiencing excruciating pain in my back, hips, knees.  In August I ended up at the periodontist due to extreme pain associated with bone exposure at my gums (bleeding and trobbing).  I now need a gum graph.  I was told to stop this med.  It has been 6 months since my last pill and I still hurt - back, hips, legs, knees, but it is getting better.  I've always been in good shape and physically active, but this pill has given me a lot of pain, expense and agony.  I won't take it again.   ",
@@ -151,6 +155,7 @@
     "n_quasi_identifying_excluded_from_examples": 1,
     "topics_flagged_small_by_phase4": [],
     "privacy_check_passed": true,
+    "is_sensitive_no_quotes": false,
     "safe_example_quotes": [
       "Works for Social Anxiety, but does not help with Depression, has significant sexual side-effects.",
       "the 100mg from depression point of view is working well. It caused sever loss of ejaculation and penis less sensitivity. Erection is still good",
@@ -181,6 +186,7 @@
     "n_quasi_identifying_excluded_from_examples": 1,
     "topics_flagged_small_by_phase4": [],
     "privacy_check_passed": true,
+    "is_sensitive_no_quotes": false,
     "safe_example_quotes": [
       " HAVE  HAD  BAD  SIDE  EFFECTS  FROM THIS  DRUG  AFTER ONLY  TAKING  2 PILLS    DIZZINESS  WEAK  HALLUCINATION .......",
       "my hallucinations dissapeared within 3 weeks! I can think clearly enough to go back to work full time.\n",
@@ -210,10 +216,7 @@
     "n_quasi_identifying_excluded_from_examples": 7,
     "topics_flagged_small_by_phase4": [],
     "privacy_check_passed": true,
-    "safe_example_quotes": [
-      "My mother's doctor did not provide the needed warning about this medication in relation to my other conditions and she ended up with many other problems as a result. ",
-      "This drug caused hyperbilirubemia, hepatotoxicity and extreme high blood pressure leading to the death of my spouse. ",
-      "My uncle started this \"experientimental\" drug for this disease and 4 days later ended  up in the hospital, specilast would not see him for 3 more months.  The drug shut all his organs down and we lost him 2 days later."
-    ]
+    "is_sensitive_no_quotes": true,
+    "safe_example_quotes": []
   }
 }
