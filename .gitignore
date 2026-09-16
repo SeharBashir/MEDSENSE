@@ -3,6 +3,7 @@ data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+!data/processed/public_data.json
 
 # Python
 venv/
@@ -11,9 +12,12 @@ __pycache__/
 .Python
 *.egg-info/
 
+# Node / dashboard build artifacts
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.env.local
+
 # OS/editor junk
 .DS_Store
 .vscode/
 *.swp
-
-!data/processed/insights_verified.json
